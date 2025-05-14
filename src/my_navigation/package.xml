@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>my_navigation</name>
+  <version>0.0.0</version>
+  <description>Navigation package for ROS 2 with Nav2</description>
+
+  <maintainer email="user@example.com">Your Name</maintainer>
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Основные зависимости ROS 2 -->
+  <depend>rclcpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf2_ros</depend>
+
+  <!-- Зависимости Nav2 -->
+  <depend>nav2_msgs</depend>
+  <depend>nav2_common</depend>
+  <depend>nav2_controller</depend>
+  <depend>nav2_planner</depend>
+  <depend>nav2_costmap_2d</depend>
+
+  <!-- Зависимости RViz -->
+  <depend>rviz_common</depend>
+  <depend>rviz_default_plugins</depend>
+  <depend>nav_msgs</depend>
+
+  <exec_depend>ros1_bridge</exec_depend>
+  <exec_depend>stage_ros</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>nav2_bringup</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <build_type>ament_package</build_type>
+  </export>
+</package>

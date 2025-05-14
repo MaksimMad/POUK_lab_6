@@ -1,0 +1,35 @@
+# Параметры DWA планировщика для ROS 2
+DWBController:
+  ros__parameters:
+    # Ограничения ускорения
+    acc_lim_x: 2.5
+    acc_lim_y: 2.5
+    acc_lim_theta: 3.2
+    
+    # Ограничения скорости
+    max_vel_x: 0.65
+    min_vel_x: 0.0
+    max_vel_y: 0.1
+    min_vel_y: -0.1
+    max_vel_theta: 1.0
+    min_vel_theta: 0.4
+    
+    # Параметры симуляции
+    sim_time: 1.7
+    sim_granularity: 0.025
+    
+    # Весовые коэффициенты
+    goal_distance_bias: 32.0
+    path_distance_bias: 24.0
+    occdist_scale: 0.01
+    
+    # Параметры остановки
+    xy_goal_tolerance: 0.2
+    yaw_goal_tolerance: 0.17
+    trans_stopped_vel: 0.01
+    rot_stopped_vel: 0.01
+    
+    # Количество семплов
+    vx_samples: 3
+    vy_samples: 10
+    vtheta_samples: 20

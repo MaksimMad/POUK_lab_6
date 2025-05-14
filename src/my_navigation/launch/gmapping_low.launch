@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Запуск gmapping в ROS 1 через мост -->
+  <arg name="scan" default="base_scan"/>
+  
+  <!-- Запуск Stage в ROS 1 -->
+  <!-- <node pkg="stage_ros" exec="stageros" args="$(find navigation)/worlds/task1.world">
+    <remap from="base_scan" to="$(var scan)"/>
+  </node> -->
+  <executable 
+    cmd="bash -c 'source /opt/ros/noetic/setup.bash &amp;&amp; rosrun stage_ros stageros src/worlds/task1.world'" 
+    output="screen" 
+    name="stage"/>
+  
+  <!-- Запуск gmapping в ROS 1 -->
+  <node pkg="gmapping" exec="slam_gmapping" name="mapper" output="screen">
+    <param name="transform_publish_period" value="0.1"/>
+    <param name="maxUrange" value="8"/>
+    <param name="particles" value="20"/>
+    <param name="xmin" value="-25"/>
+    <param name="xmax" value="25"/>
+    <param name="ymin" value="-25"/>
+    <param name="ymax" value="25"/>
+    <remap from="scan" to="$(var scan)"/>
+  </node>
+</launch>
