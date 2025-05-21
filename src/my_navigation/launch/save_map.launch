@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-  <!-- Сохранение карты -->
-  <arg name="map_name" default="map"/>
-  
-  <node pkg="nav2_map_server" exec="map_saver" name="map_saver" output="screen"
-        args="-f $(find-pkg-share navigation)/maps/$(var map_name)"/>
-</launch>
